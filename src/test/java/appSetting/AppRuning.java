@@ -25,13 +25,10 @@ public class AppRuning {
                 dc.setCapability("platformVersion", "10.0");
                 dc.setCapability("autoGrantPermissions", "true");
                 dc.setCapability("appPackage", "com.pordiva.nesine.android");
+                dc.setCapability("app",System.getProperty("user.dir")+"\\src\\test\\resources\\app\\nesine.com.apk");
                 dc.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, true);
                 dc.setCapability("appActivity", "com.nesine.ui.taboutside.splash.MainActivityDefault");
                 driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), dc);
-                AndroidDriver androidDriver = (AndroidDriver) driver;
-                //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-
                 break;
             case "iOS":
                 //some code
