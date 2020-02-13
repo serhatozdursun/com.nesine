@@ -6,7 +6,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import framwork.CommonFunctions;
+import framework.CommonFunctions;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
 import org.junit.Assert;
