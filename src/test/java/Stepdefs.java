@@ -7,7 +7,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import framwork.CommonFunctions;
-import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
 import org.junit.Assert;
@@ -18,20 +17,19 @@ import java.util.List;
 
 
 public class Stepdefs {
-    private MobileDriver driver;
+
     CommonFunctions commonFunctions;
     List<String> eventsName = new ArrayList<>();
 
     @After
     public void closeApp() {
-        driver.closeApp();
+        commonFunctions.closeApp();
     }
 
     @Given("^Nesine app runing on \"([^\"]*)\"$")
     public void nesineAppRuningOn(String device) throws Throwable {
         AppRuning appRuning = new AppRuning();
-        this.driver = appRuning.RunApplication(device);
-        commonFunctions = new CommonFunctions(this.driver);
+        commonFunctions = new CommonFunctions(appRuning.RunApplication(device));
     }
 
     @When("^I click \"([^\"]*)\" button\\.$")

@@ -78,5 +78,7 @@ public class CommonFunctions {
         return driver.findElementsByXPath("//*[@text='" + element + "']").size() != 0;
     }
 
-
+    public void closeApp(){
+        driver.closeApp();
+    }
 }
